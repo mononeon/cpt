@@ -1,0 +1,40 @@
+// CPT Configuration Sample File
+// Copy this to ~/.cptconfig to override default settings
+{
+    // Default language extension when creating new problem templates
+    "default_language": "cpp",
+
+    // Naming format for problems when listening from Competitive Companion.
+    // Options:
+    // "veryshortform" : "A" (Default)
+    // "shortform"     : "1337A"
+    // "longform"      : "1337A Hello World"
+    "naming_format": "veryshortform",
+
+    // Compile commands mapping language extension to the command.
+    // Use {source} for the source file and {output} for the output binary.
+    "compile_commands": {
+        "cpp": "g++ -O2 -Wall -Wextra -std=c++17 {source} -o {output}",
+        "c": "gcc -O2 -Wall -Wextra {source} -o {output}",
+        "java": "javac {source}",
+        "rs": "rustc -O {source} -o {output}",
+        "go": "go build -o {output} {source}"
+    },
+
+    // Run commands mapping language extension to the command.
+    // Use {executable} for the compiled binary or {source} if interpreted.
+    "run_commands": {
+        "cpp": "{executable}",
+        "c": "{executable}",
+        "java": "java {source}", // Note: for Java you may need to strip the extension
+        "rs": "{executable}",
+        "go": "{executable}",
+        "py": "python {source}"
+    },
+
+    // Absolute paths to templates for different languages
+    "templates": {
+        "cpp": "C:/Users/rpam/Code/projects/cpt/templates/template.cpp",
+        "py": "C:/Users/rpam/Code/projects/cpt/templates/template.py"
+    }
+}
